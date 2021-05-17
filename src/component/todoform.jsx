@@ -22,7 +22,7 @@ class TodoForm extends Component {
 
       todos.push(todo);
 
-      this.setState({ todos });
+      this.setState({ todos: todos });
       this.setState({ title: "" });
     }
   };
@@ -35,7 +35,8 @@ class TodoForm extends Component {
   handleComplete = (id) => {
     let todos = [...this.state.todos];
     todos.filter((todo) => {
-      if (todo.id === id) todo.isComplete = true;
+      if (todo.id === id) return (todo.isComplete = true);
+      else return null;
     });
     this.setState({ todos: todos });
   };
@@ -43,17 +44,21 @@ class TodoForm extends Component {
   // delete todo
   handleDelete = (id) => {
     // let todos = [...this.state.todos];
-    const filterTodos = this.state.todos.filter((todo) => todo.id !== id);
+    const filterTodos = this.state.todos.filter((todo, index) => {
+      // if (todo.id === id) return todo.splice(index, 1);
+
+      return todo.id !== id;
+    });
     this.setState({ todos: filterTodos });
   };
 
-  handleUpdate = (title, id) => {
-    const todos = [...this.state.todos];
-    todos.map((todo) => {
-      if (todo.id === id) todo.title = title;
-    });
-    this.setState({ todos });
-  };
+  // handleUpdate = (title, id) => {
+  //   const todos = [...this.state.todos];
+  //   todos.map((todo) => {
+  //     if (todo.id === id) todo.title = title;
+  //   });
+  //   this.setState({ todos });
+  // };
   render() {
     return (
       <div className="todo">
@@ -71,7 +76,7 @@ class TodoForm extends Component {
               key={todo.id}
               todo={todo}
               completeTodo={this.handleComplete}
-              setUpdate={this.handleUpdate}
+              // setUpdate={this.handleUpdate}
               deleteTodo={this.handleDelete}
             />
           ))}

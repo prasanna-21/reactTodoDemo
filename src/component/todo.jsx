@@ -1,6 +1,6 @@
 import React from "react";
 const Todo = (props) => {
-  const { todo, deleteTodo, completeTodo, setUpdate } = props;
+  const { todo, deleteTodo, completeTodo } = props;
   return (
     <div className="todo-list" key={todo.id}>
       <p
