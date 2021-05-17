@@ -1,0 +1,91 @@
+body,
+html {
+  margin: 0;
+  background-color: aqua;
+}
+h3 {
+  color: blue;
+  text-align: center;
+}
+.todo {
+  background-color: rgb(161, 153, 125);
+  width: 500px;
+  min-height: 500px;
+  margin: 50px auto;
+  border-radius: 10px;
+  /* transform: translate(90%, 5%); */
+}
+.todo-form {
+  margin: 10px;
+  border-style: none;
+}
+input {
+  background-color: rgb(46, 33, 46);
+  color: white;
+  border-radius: 30px;
+  width: 300px;
+  margin: 20px 20px;
+  margin-left: 30px;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  font-size: medium;
+}
+.todo-form button {
+  background-color: rgb(247, 247, 29);
+  border-radius: 15px;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+.todo-box {
+  background-color: rgb(161, 153, 125);
+  height: 400px;
+  overflow: auto;
+}
+.todo-list {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid rgb(87, 84, 73);
+  color: white;
+  width: 400px;
+  position: relative;
+  /* margin-top: 10px;
+  margin-left: 30px; */
+  margin: 20px auto;
+  padding: 5px;
+  border-radius: 30px;
+}
+.todo-list p {
+  width: 100px;
+}
+/* .todo-list input {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 200px;
+  height: 20px;
+  background-color: transparent;
+} */
+.complete {
+  background-color: blue;
+  color: aliceblue;
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.delete {
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  position: absolute;
+  top: 20px;
+  transform: translateX(330px);
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
+}
